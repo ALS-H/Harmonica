@@ -1,0 +1,5 @@
+emotion_tagged_tokens.json
+tokenization.ipynb
+*.csv
+*.json
+*.ipynb_checkpoints/
