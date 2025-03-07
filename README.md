@@ -1,8 +1,15 @@
 # Harmonica
 Music Generation GenAI project
-- pre-processing midi files into json format
-- converting the json file to muisc tokens 
-- retrieve these tokens through RAG 
-- pass the query along with the retrieved tokens to the generator(llm)
-- generate new music and save it in midi format.
+- **Dataset on Kaggle**
+  - https://kaggle.com/datasets/bd5662249d974c929233629a3651eedfe35efbe32b89138bc9b9a547f03c8aae
+- **Pre Processing**
+  - pre-processing midi files into json format
+  - converting the json file to muisc tokens
+  - tag the music tokens with emotions like happy,sad,neutral,calm and energetic
+  - then convert these tagged music tokens to tagged remi tokens
+- **Prompt Engineering**
+  - Chain of Thought
+  - Tree of Thought
+- **RAG**
+  - retrieve these tokens through RAG 
 
