@@ -9,8 +9,13 @@ Music Generation GenAI project
   - tag the music tokens with emotions like happy,sad,neutral,calm and energetic
   - then convert these tagged music tokens to tagged remi tokens
 - **Prompt Engineering**
-  - Chain of Thought
-  - Tree of Thought
-- **RAG**
-  - retrieve these tokens through RAG 
+  - Chain of Thought (CoT)
+  - Tree of Thought (ToT)
+  - Graph of Thought (GoT)
+- **Music RAG**
+  -  use the csv tagged music tokens as the context for retrieval
+  -  use an Agent to convert music data to NLP
+  -  Langchain FAISS vector store implementation
+  -  facebook musicgen model as generator
+  -  implement prompt engineering techniques
 
