@@ -14,7 +14,7 @@ Music Generation GenAI project
   - Graph of Thought (GoT)
 - **Music RAG**
   -  use the csv tagged music tokens as the context for retrieval
-  -  use an Agent to convert music data to NLP
+  -  use an Agent(LLAMA model from Huggingface) to convert music data to NLP
   -  Langchain FAISS vector store implementation
   -  facebook musicgen model as generator
   -  implement prompt engineering techniques
