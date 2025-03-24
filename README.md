@@ -1,7 +1,7 @@
 # Harmonica
 Music Generation GenAI project
 - **Dataset on Kaggle**
-  - https://kaggle.com/datasets/f6e95217392b2f95d53d199d824066e1efcd1b9a99fe1e11528adbf4d53f80d8
+  - https://kaggle.com/datasets/a9eab5da230bf7f0d338625fc7f837a757296e82ec8e8c93e2bff753a4ceada3
 - **Pre Processing**
   - pre-processing midi files into json format
   - converting the json file to muisc tokens csv
