@@ -4,9 +4,8 @@ Music Generation GenAI project
   - https://kaggle.com/datasets/f6e95217392b2f95d53d199d824066e1efcd1b9a99fe1e11528adbf4d53f80d8
 - **Pre Processing**
   - pre-processing midi files into json format
-  - converting the json file to muisc tokens
-  - tag the music tokens with emotions like happy,sad,neutral,calm and energetic
-  - then convert these tagged music tokens to tagged remi tokens
+  - converting the json file to muisc tokens csv
+  - tag the music tokens with emotions like happy,sad,neutral,angry,fear,calm,disgust,energetic and surprise.
 - **Prompt Engineering**
   - Chain of Thought (CoT)
   - Tree of Thought (ToT)
@@ -17,4 +16,3 @@ Music Generation GenAI project
   -  Langchain FAISS vector store implementation
   -  facebook musicgen model as generator
   -  implement prompt engineering techniques
-
