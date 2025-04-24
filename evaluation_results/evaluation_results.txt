@@ -1,0 +1,17 @@
+Accuracy: 0.3333
+
+Confusion Matrix:
+[[0 0 1]
+ [0 0 1]
+ [0 0 1]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        calm       0.00      0.00      0.00         1
+   energetic       0.00      0.00      0.00         1
+       happy       0.33      1.00      0.50         1
+
+    accuracy                           0.33         3
+   macro avg       0.11      0.33      0.17         3
+weighted avg       0.11      0.33      0.17         3
