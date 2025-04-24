@@ -51,15 +51,14 @@ def predict_music_similarity(reference_file, generated_file):
     return mse
 
 # Paths to the reference and generated music files
-reference_file = "cot_generated_music_calm.wav"  # Reference file
+reference_file = "GoT_generated_music_happy.wav"  # Use GoT-generated happy music as the reference file
 generated_files = {
-    "Chatbot Music": "chat_bot_music.wav",
     "Energetic Music": "tot_generated_music_energetic.wav",
-    "Happy Music": "got_generated_music_happy.wav",
+    "Chatbot Music": "chat_bot_music.wav",
 }
 
-# Ground truth labels (e.g., "calm", "energetic", "happy")
-true_labels = ["calm", "energetic", "happy"]
+# Ground truth labels (e.g., "energetic", "calm")
+true_labels = ["energetic", "calm"]
 
 # Predicted labels based on similarity
 predicted_labels = []
@@ -70,19 +69,17 @@ for label, file_path in generated_files.items():
     if mse is not None:
         print(f"{label}: MSE = {mse:.4f}")
         # Assign predicted label based on MSE (you can define thresholds for classification)
-        if mse < 0.01:  # Example threshold for "calm"
-            predicted_labels.append("calm")
-        elif mse < 0.05:  # Example threshold for "energetic"
+        if mse < 100:  # Example threshold for "energetic"
             predicted_labels.append("energetic")
         else:
-            predicted_labels.append("happy")
+            predicted_labels.append("calm")
     else:
         predicted_labels.append("unknown")
 
 # Evaluate predictions
 accuracy = accuracy_score(true_labels, predicted_labels)
-conf_matrix = confusion_matrix(true_labels, predicted_labels, labels=["calm", "energetic", "happy"])
-class_report = classification_report(true_labels, predicted_labels, labels=["calm", "energetic", "happy"])
+conf_matrix = confusion_matrix(true_labels, predicted_labels, labels=["energetic", "calm"])
+class_report = classification_report(true_labels, predicted_labels, labels=["energetic", "calm"], zero_division=0)
 
 print(f"Accuracy: {accuracy:.4f}")
 print("Confusion Matrix:")
@@ -91,10 +88,10 @@ print("Classification Report:")
 print(class_report)
 
 # Save evaluation results
-output_dir = "evaluation_results"
+output_dir = "evaluation_results_got"
 os.makedirs(output_dir, exist_ok=True)
 
-with open(f"{output_dir}/evaluation_results.txt", "w") as f:
+with open(f"{output_dir}/evaluation_results_got.txt", "w") as f:
     f.write(f"Accuracy: {accuracy:.4f}\n\n")
     f.write("Confusion Matrix:\n")
     f.write(str(conf_matrix))
@@ -103,8 +100,8 @@ with open(f"{output_dir}/evaluation_results.txt", "w") as f:
 
 plt.figure(figsize=(8, 6))
 sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues',
-            xticklabels=["Calm", "Energetic", "Happy"],
-            yticklabels=["Calm", "Energetic", "Happy"])
+            xticklabels=["Energetic", "Calm"],
+            yticklabels=["Energetic", "Calm"])
 plt.xlabel('Predicted Label')
 plt.ylabel('True Label')
 plt.title(f'Confusion Matrix (Accuracy: {accuracy:.2f})')
@@ -123,5 +120,5 @@ print("Evaluation complete!")
 print(f"Results saved to {output_dir}")
 
 print("\nExample Predictions:")
-examples = results_df.sample(3).to_string(index=False)
+examples = results_df.sample(2).to_string(index=False)
 print(examples)
